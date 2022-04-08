@@ -23,10 +23,9 @@ function getJoke() {
         .then(function (response) { return response.json() })
         .then(function (data) { 
             var joke = data.value
-            var chuckJoke= document.createElement("h2")
-            chuckJoke.innerHTML=joke
-            jokeEl.appendChild(chuckJoke)
-            console.log(data) })
+            return joke
+            
+        })
         .catch(function (error) { console.log(error) })
 }
 
