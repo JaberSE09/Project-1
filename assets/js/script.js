@@ -23,9 +23,7 @@ function getJoke() {
         .then(function (response) { return response.json() })
         .then(function (data) { 
             var joke = data.value
-            var icon_url = data.icon_url 
             var chuckJoke= document.createElement("h2")
-
             chuckJoke.innerHTML=joke
             jokeEl.appendChild(chuckJoke)
             console.log(data) })
