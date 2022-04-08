@@ -21,6 +21,7 @@ function getJoke(){
 }
 
 function activity (data) {
+    console.log(data)
     var activity = data.activity
     activityEl.innerText = activity
 }                                                 
