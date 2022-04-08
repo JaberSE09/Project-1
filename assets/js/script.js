@@ -24,7 +24,6 @@ function getJoke() {
         .then(function (data) { 
             var joke = data.value
             return joke
-            
         })
         .catch(function (error) { console.log(error) })
 }
