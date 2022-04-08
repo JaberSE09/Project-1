@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+   }
+   body {
+    font-family: 'Fjalla One', sans-serif;
+    background-color: grey;
+   }
+   a {
+    text-decoration: none;
+   }
+   li {
+    list-style: none;
+   }/* NAVBAR STYLING STARTS */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgb(132, 78, 44);
+    color: #fff;
+   }
+   .nav-links a {
+    color: #fff;
+   }
+   /* LOGO */
+   .logo {
+    font-size: 32px;
+   }
+   /* NAVBAR MENU */
+   .menu {
+    display: flex;
+    gap: 1em;
+    font-size: 18px;
+   }
+   .menu li:hover {
+    background-color: rgb(132, 78, 44);;
+    border-radius: 5px;
+    transition: 0.3s ease;
+   }
+   .menu li {
+    padding: 5px 14px;
+   }
+/* joke content styles */
+.joke-contents {
+    padding: 5% 15%;
+    text-align:center;
+}
+
+.header {
+    font-size: x-large;
+    padding: 2%;
+}
+
+.content {
+    font-size: large;
+    padding: .5%;
+}
+
