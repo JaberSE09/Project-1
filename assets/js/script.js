@@ -28,6 +28,9 @@ function getJoke() {
             chuckJokeImg.setAttribute("src" , icon_url)
             jokeEl.appendChild(chuckJokeImg)
             
+            
+
+
 
             
             
