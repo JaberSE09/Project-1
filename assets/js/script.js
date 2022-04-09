@@ -10,7 +10,7 @@ var jokeEl = document.getElementById("jokes")
 var jokeBtnEl = document.getElementById("start-btn")
 var activityEl = document.getElementById("calledActivity")
 var activityBtn = document.getElementById("newActivity")
-var jokeEl = document.getElementById("joke")
+var jokeEl = document.getElementById("jokes")
 var activityType = document.getElementById("activityType")
 
 
@@ -35,14 +35,7 @@ function getJoke() {
     fetch(jokesApi)
         .then(function (response) { return response.json() })
         .then(function (data) { 
-            var joke = data.value
-
-
-        jokeBtnEl.addEventListener("click" , function(){
-            jokeEl.innerHTML= joke
-        })
-
-
+            jokeEl.innerHTML= data.value
         })
         .catch(function (error) { console.log(error) })
 }
@@ -57,9 +50,5 @@ function activity (data) {
     activityEl.innerText = activity
 }                                                 
 activityBtn.addEventListener("click", getboredactivity)
+jokeBtnEl.addEventListener("click" , getJoke)
 getboredactivity()
-
-//set the interval to refresh button when hit
-setInterval(() => {
-     getJoke()
-}, 1000);
