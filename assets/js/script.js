@@ -172,4 +172,8 @@ function displayScore () {
 
 activityBtn.addEventListener("click", getboredactivity)
 jokeBtnEl.addEventListener("click" , getJoke)
+game.addEventListener("submit", numberGuess)
+scoreEnter.addEventListener("submit", logScore)
+displayNumGuessHS.addEventListener("click", displayScore)
 getboredactivity()
+getJoke()
