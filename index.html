@@ -23,7 +23,7 @@
    <main class="instructions">
        <h1 class="header">Chuck Norris Joke Generator</h1>
        <p  id="jokes" class="content">Click to generate a random joke:</p>
-       <input type="text" name="joke" id="joke">
+       <input type="text" name="joke" id="joke" placeholder="Category">
        <button id="start-btn" class="btn">Get Joke</button>
    </main>
    
@@ -32,9 +32,9 @@
 
   <script src="./assets/js/script.js"></script>
     <div id="activity">
-        <p>Here's an activity for you to try.</p>
+        <p>Here's an activity suggestion.</p>
         <div id="calledActivity"></div>
-        <p>Would you like to narrow choice?</p>
+        <p>Would you like to narrow your choice?</p>
         <select id="activityType">
             <option value="random">Activity Type (default ANY)</option>
             <option value="education">Education</option>
@@ -49,6 +49,31 @@
         </select>
         <button id="newActivity">New Activity</button>
     </div>
+
+    <div>
+        <p>Here's a number guessing game to pass some time.</p>
+        <p>You get 10 chances to guess a number</p>
+        <p id="guessNumber">Guess number 1</p>
+        <p id="guessResponse">Guess a number between 1 and 1000</p>
+        <form id="game">
+            <input id="guess" type="number"  min="1" max="1000">
+            <button id="guessBtn">Guess Number</button>
+        </form>
+        <form id="score" style="display: none;">
+            <input id="name" type="text">
+            <button id="nameBtn">Enter Name</button>
+        </form>
+        <button id="displayNG">Display Number Guess High Scores</button>
+        <li>
+            <ol id="score0"></ol>
+            <ol id="score1"></ol>
+            <ol id="score2"></ol>
+            <ol id="score3"></ol>
+            <ol id="score4"></ol>
+        </li>
+    </div>
+
+
     <script src="assets/js/script.js"></script>
  </body>
 </html>
