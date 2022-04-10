@@ -14,7 +14,7 @@
  <!-- NAVIGATION MENU -->
     <ul class="nav-links">
  <!-- NAVIGATION MENUS -->
-    <div class="menu">
+    <div class="menu"> <!-- where does this div end?-->
      <li><a href="/">Placeholder 1</a></li>
      <li><a href="/">Placeholder 2</a></li>
      <li><a href="/">Placeholder 3</a></li>
@@ -23,12 +23,27 @@
    <main class="instructions">
        <h1 class="header">Chuck Norris Joke Generator</h1>
        <p  id="jokes" class="content">Click to generate a random joke:</p>
-       <input type="text" name="joke" id="joke" placeholder="Category">
+       <select name="joke" id="joke">
+            <option value="random">Joke Type (default RANDOM)</option>
+            <option value="animal">Animal</option>
+            <option value="career">Career</option>
+            <option value="celebrity">Celebrity</option>
+            <option value="dev">Dev</option>
+            <option value="fashion">Fashion</option>
+            <option value="food">Food</option>
+            <option value="history">History</option>
+            <option value="money">Money</option>
+            <option value="movie">Movie</option>
+            <option value="music">Music</option>
+            <option value="political">Political</option>
+            <option value="religion">Religion</option>
+            <option value="science">Science</option>
+            <option value="sport">Sport</option>
+            <option value="travel">Travel</option>
+        </select>   
        <button id="start-btn" class="btn">Get Joke</button>
    </main>
-   
-   
-  </div>
+ </div>
 
   <div id="activity">
       <p>Here's an activity suggestion.</p>
@@ -39,7 +54,7 @@
             <option value="education">Education</option>
             <option value="recreational">Recreational</option>
             <option value="social">Social</option>
-            <option value="diy">Do it yourself</option>
+            <option value="diy">Do It Yourself</option>
             <option value="charity">Charity</option>
             <option value="cooking">Cooking</option>
             <option value="relaxation">Relaxation</option>
