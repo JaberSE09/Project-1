@@ -4,10 +4,12 @@
 var boredApi = "http://www.boredapi.com/api/activity"
 
 //https://api.chucknorris.io/#!
-var jokesApi = "https://api.chucknorris.io/jokes/random"
+var jokesApi = "https://api.chucknorris.io/jokes/random?category=sport"
+var jokeEl = document.getElementById("jokes")
+var jokeBtnEl = document.getElementById("start-btn")
 var activityEl = document.getElementById("calledActivity")
 var activityBtn = document.getElementById("newActivity")
-var jokeEl = document.getElementById("joke")
+var jokeEl = document.getElementById("jokes")
 var activityType = document.getElementById("activityType")
 var guess= document.getElementById("guess")
 var game = document.getElementById("game")
@@ -22,7 +24,6 @@ var targetNum = random();
 var guessMin = 1
 var guessMax = 1000
 var guessCount = 1
-
 
 
 //fetch bored activity data000
@@ -45,22 +46,39 @@ function getboredactivity() {
 function getJoke() {
     fetch(jokesApi)
         .then(function (response) { return response.json() })
-        .then(function (data) { 
-            var joke = data.value
-            var icon_url= data.icon_url
-            var chuckJokeImg= document.createElement("img")
-            chuckJokeImg.setAttribute("src" , icon_url)
-            jokeEl.appendChild(chuckJokeImg)
-            
+        .then(function (data) {
 
+            var jokesSearch= document.getElementById("joke").value.trim()
+            if (jokesSearch){
             
-            
-            
-            
-            
-            console.log(data) })
+                var searchApi = `https://api.chucknorris.io/jokes/random?category=${jokesSearch}`
+                fetch(searchApi).then(function(response){
+                    return response.json()
+                }).then(function (data){
+                console.log(data)
+                if(data.status == 404 ){
+                    jokeEl.innerHTML=data.message
+                }
+                else if(data.categories[0] == "explicit"){
+                    jokeEl.innerHTML="no jokes found"
+                }
+                else{
+                    jokeEl.innerHTML=data.value
+                }
+                
+            })
+        }
+            else{
+            jokeEl.innerHTML= data.value
+}
+
+
+        })
         .catch(function (error) { console.log(error) })
 }
+
+
+
 // activity API call
 function activity (data) {
     var activity = data.activity
@@ -153,8 +171,5 @@ function displayScore () {
 }
 
 activityBtn.addEventListener("click", getboredactivity)
-game.addEventListener("submit", numberGuess)
-scoreEnter.addEventListener("submit", logScore)
-displayNumGuessHS.addEventListener("click", displayScore)
+jokeBtnEl.addEventListener("click" , getJoke)
 getboredactivity()
-getJoke()
