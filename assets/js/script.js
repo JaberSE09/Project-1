@@ -70,25 +70,30 @@ function activity (data) {
 function numberGuess (event) {
     event.preventDefault()
     guessCount = guessCount + 1
+    // user guesses correctly
     if (guess.value == targetNum) {
         guessCount = guessCount - 1
         targetNum = random();
-        // guessNumber.innerText = "Guess number " + guessCount
-        // guessResponse.innerText = "Congratulations.  Try again"
         score(guessCount)
-    }  else if (guessCount > 9) {
+    } 
+    // user fails to guess correctly
+    else if (guessCount > 9) {
         guessResponse.innerText = "Too bad. Try again"
         guessCount = 1
         guessNumber.innerText = "Guess number " + guessCount
         targetNum = random();
         guess.value = ""
-    } else if (guess.value < targetNum) {
+    } 
+    // user guesses too low
+    else if (guess.value < targetNum) {
         guessNumber.innerText = "Guess number " + guessCount
         guessMin = guess.value
         guess.setAttribute("min", guessMin)
         guessResponse.innerText = "Too Low.  Guess a number between " + guessMin + " and " + guessMax
         guess.value = ""
-    } else if (guess.value > targetNum) {
+    } 
+    // user guesses too high
+    else if (guess.value > targetNum) {
         guessNumber.innerText = "Guess number " + guessCount
         guessMax = guess.value
         guess.setAttribute("max", guessMax)
@@ -96,12 +101,12 @@ function numberGuess (event) {
         guess.value = ""
     }
     }
-
+// random number between 1 and 1000 function
 function random () {
     var num = Math.floor(Math.random() * 1000 + 1);
     return num;
 }
-
+// user wins, changes buttons, reset values
 function score (guess) {
     var gameTemp = document.getElementById("game")
     gameTemp.style.display = "none"
@@ -113,7 +118,7 @@ function score (guess) {
     guess.setAttribute("max", 1000)
     guess.value = ""
 }
-
+// set scores to local storage
 function logScore (event) {
     event.preventDefault()
     var name = document.getElementById("name")
@@ -135,7 +140,7 @@ function logScore (event) {
     gameTemp.style.display = "block"
     name.value = ''
 }
-
+// displays locally stored scores
 function displayScore () {
     var storedScores = localStorage.getItem("scores")
     var highScores = JSON.parse(storedScores)
@@ -152,4 +157,4 @@ game.addEventListener("submit", numberGuess)
 scoreEnter.addEventListener("submit", logScore)
 displayNumGuessHS.addEventListener("click", displayScore)
 getboredactivity()
-// getJoke()
+getJoke()
