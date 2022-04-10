@@ -95,7 +95,7 @@ function numberGuess (event) {
         score(guessCount)
     } 
     // user fails to guess correctly
-    else if (guessCount > 9) {
+    else if (guessCount > 10) {
         guessResponse.innerText = "Too bad. Try again"
         guessCount = 1
         guessNumber.innerText = "Guess number " + guessCount
@@ -172,4 +172,8 @@ function displayScore () {
 
 activityBtn.addEventListener("click", getboredactivity)
 jokeBtnEl.addEventListener("click" , getJoke)
+game.addEventListener("submit", numberGuess)
+scoreEnter.addEventListener("submit", logScore)
+displayNumGuessHS.addEventListener("click", displayScore)
 getboredactivity()
+getJoke()
