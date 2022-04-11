@@ -4,8 +4,7 @@
 var boredApi = "http://www.boredapi.com/api/activity"
 
 //https://api.chucknorris.io/#!
-var jokesApi = "https://api.chucknorris.io/jokes/random?category=sport"
-
+var jokesApi = "https://api.chucknorris.io/jokes/random"
 var jokeEl = document.getElementById("jokes")
 var jokeBtnEl = document.getElementById("start-btn")
 var activityEl = document.getElementById("calledActivity")
@@ -33,50 +32,83 @@ function getboredactivity() {
         fetch(boredApi)
             .then(function (response) { return response.json() })
             .then(function (data) {activity(data)})
-            .catch(function (error) {console.log(error)})
+            .catch(function (error) {
+                activityEl.innerText = "Something went wrong.  Please try again"
+                console.log(error)
+            })
     } else {
         var boredApiTemp = boredApi + '?type=' + activityType.value
         fetch(boredApiTemp)
             .then(function (response) { return response.json() })
             .then(function (data) {activity(data)})
-            .catch(function (error) {console.log(error)})
+            .catch(function (error) {
+                activityEl.innerText = "Something went wrong.  Please try again"
+                console.log(error)
+            })
     }
 }
 
 //fetch jokes data
+
 function getJoke() {
-    fetch(jokesApi)
+    var jokesCategory = document.getElementById("joke").value
+    if (jokesCategory === 'random') {
+        fetch(jokesApi)
         .then(function (response) { return response.json() })
         .then(function (data) {
-
-            var jokesSearch= document.getElementById("joke").value.trim()
-            if (jokesSearch){
-            
-                var searchApi = `https://api.chucknorris.io/jokes/random?category=${jokesSearch}`
-                fetch(searchApi).then(function(response){
-                    return response.json()
-                }).then(function (data){
-                console.log(data)
-                if(data.status == 404 ){
-                    jokeEl.innerHTML=data.message
-                }
-                else if(data.categories[0] == "explicit"){
-                    jokeEl.innerHTML="no jokes found"
-                }
-                else{
-                    jokeEl.innerHTML=data.value
-                }
-                
-            })
-        }
-            else{
-            jokeEl.innerHTML= data.value
-}
-
-
+            if (data.categories[0] == 'explicit') {
+                getJoke()
+            }
+            jokeEl.innerHTML = data.value
         })
-        .catch(function (error) { console.log(error) })
+        .catch(function (error) {
+            jokeEl.innerHTML = "Something went wrong.  Please try again"
+            console.log(error)
+        })
+    } else {
+        var jokeApiCategory = jokesApi + "?category=" + jokesCategory
+        fetch(jokeApiCategory)
+        .then (function (response) {return response.json() })
+        .then (function (data) { jokeEl.innerHTML = data.value})
+        .catch (function (error) {
+            jokeEl.innerHTML = "Something went wrong.  Please try again"
+            console.log(error)
+        })
+    }
 }
+// function getJoke() {
+//     fetch(jokesApi)
+//         .then(function (response) { return response.json() })
+//         .then(function (data) {
+
+//             var jokesSearch= document.getElementById("joke").value.trim()
+//             if (jokesSearch){
+            
+//                 var searchApi = `https://api.chucknorris.io/jokes/random?category=${jokesSearch}`
+//                 fetch(searchApi).then(function(response){
+//                     return response.json()
+//                 }).then(function (data){
+//                 console.log(data)
+//                 if(data.status == 404 ){
+//                     jokeEl.innerHTML=data.message
+//                 }
+//                 else if(data.categories[0] == "explicit"){
+//                     jokeEl.innerHTML="no jokes found"
+//                 }
+//                 else{
+//                     jokeEl.innerHTML=data.value
+//                 }
+                
+//             })
+//         }
+//             else{
+//             jokeEl.innerHTML= data.value
+// }
+
+
+//         })
+//         .catch(function (error) { console.log(error) })
+// }
 
 
 
