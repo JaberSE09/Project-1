@@ -5,6 +5,7 @@ var boredApi = "http://www.boredapi.com/api/activity"
 
 //https://api.chucknorris.io/#!
 var jokesApi = "https://api.chucknorris.io/jokes/random?category=sport"
+
 var jokeEl = document.getElementById("jokes")
 var jokeBtnEl = document.getElementById("start-btn")
 var activityEl = document.getElementById("calledActivity")
