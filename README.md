@@ -13,7 +13,7 @@ Creating a website where if you are bored you can come to to to get a joke / fin
 
 ## Installation
 
-To install this project you would have to git clone`https://github.com/JaberSE09/Project-1.git` and run the index.html
+To install this project you would have to git clone `https://github.com/JaberSE09/Project-1.git` and run the index.html
 
 ## Usage
 
