@@ -58,4 +58,35 @@
     font-size: large;
     padding: .5%;
 }
+#activity {
+    text-align:center;
+}
 
+.header {
+font-size: x-large;
+padding: 2%;
+}
+
+#div { text-align: center;}
+
+#guessNumber {
+    text-align: center;
+}
+
+#guessResponse {
+    text-align: center;
+
+}
+#game{
+    text-align: center;
+}
+
+#button {
+    text-align: center;
+}
+#number-guess
+ {text-align: center;
+    padding: 5% 15%;
+    text-align:center;
+}
+    
