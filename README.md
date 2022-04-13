@@ -21,7 +21,7 @@ The bored website has a random joke generator where you can choose from a variet
 
 Then there is an activity generator where you can get an activity based on a catagory.
 
-The last section is a number guessing game where you chose a number between 1 and 1000 and you can see the amount of times you tried above it.
+The last section is a number guessing game where you chose a number between 1 and 1000 and you can see the amount of times you tried above it, as well as see the best scores.
 
 ```md
     ![The website has three sections where you can go jokes / activities  / guessing game with a nav bar to get to each section](assets/images/fullpage.png)
