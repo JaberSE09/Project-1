@@ -4,7 +4,7 @@
 
 Creating a website where if you are bored you can come to to to get a joke / find a activity / see if you can guess the number. The bored website was built to give individuals a chance to entertain themselves.  
 
-## Table of Contents 
+## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
@@ -13,7 +13,7 @@ Creating a website where if you are bored you can come to to to get a joke / fin
 
 ## Installation
 
-To install this project you would have to git clone https://github.com/JaberSE09/Project-1.git and run the index.html
+To install this project you would have to git clone`https://github.com/JaberSE09/Project-1.git` and run the index.html
 
 ## Usage
 
@@ -22,7 +22,6 @@ The bored website has a random joke generator where you can choose from a variet
 Then there is an activity generator where you can get an activity based on a catagory.
 
 The lst section is a number guessing game where you chose a number between 1 and 1000 and you can see the amount of times you tried above it.
-
 
     ```md
     ![alt text](assets/images/screenshot.png)
@@ -33,7 +32,6 @@ The lst section is a number guessing game where you chose a number between 1 and
 Alan Edlebeck
 Danial Al-Sabkie
 Sajid Jaber
-
 
 ## License
 
