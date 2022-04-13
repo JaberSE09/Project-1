@@ -1,4 +1,4 @@
-# Project-1
+# Bored
 
 ## Description
 
@@ -19,7 +19,7 @@ To install this project you would have to git clone https://github.com/JaberSE09
 
 The bored website has a random joke generator where you can choose from a variety of catagories to get a Chuck Norris joke.
 
-Then there is an activity generator where you can get an activity based on a catagory. 
+Then there is an activity generator where you can get an activity based on a catagory.
 
 The lst section is a number guessing game where you chose a number between 1 and 1000 and you can see the amount of times you tried above it.
 
