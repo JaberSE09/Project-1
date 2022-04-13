@@ -9,7 +9,6 @@ var jokeEl = document.getElementById("jokes")
 var jokeBtnEl = document.getElementById("start-btn")
 var activityEl = document.getElementById("calledActivity")
 var activityBtn = document.getElementById("newActivity")
-var jokeEl = document.getElementById("jokes")
 var activityType = document.getElementById("activityType")
 var guess= document.getElementById("guess")
 var game = document.getElementById("game")
@@ -76,6 +75,7 @@ function getJoke() {
         })
     }
 }
+
 // function getJoke() {
 //     fetch(jokesApi)
 //         .then(function (response) { return response.json() })
