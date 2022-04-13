@@ -18,11 +18,12 @@
      <li><a href="#joke-contents">Chuck Norris</a></li>
      <li><a href="#activity">Activity Suggestion</a></li>
      <li><a href="#number-guess">Number Guess</a></li>
+    </div>
  </nav>
  <div class="joke-contents">
    <main class="instructions">
        <h2 class="header">Chuck Norris Joke Generator</h2>
-       <p  id="jokes" class="content">Click to generate a random joke:</p>
+       <h5 id="jokes" class="content">Click to generate a random joke:</h5>
        <select name="joke" id="joke">
             <option value="random">Joke Type (default RANDOM)</option>
             <option value="animal">Animal</option>
@@ -46,7 +47,8 @@
  </div>
 
   <div id="activity">
-      <h2>Activity Suggestion</h2>
+      <h2 class="header">Activity Suggestion</h2>
+      <h5 class="content" id="calledActivity"></h5>
       <p>Would you like to narrow your choice?</p>
       <select id="activityType">
             <option value="random">Activity Type (default ANY)</option>
@@ -61,14 +63,14 @@
             <option value="busywork">Busywork</option>
         </select>
         <button id="newActivity">New Activity</button>
-        <div id="calledActivity"></div>
+
     </div>
     
     <div id="number-guess">
-        <h2>Number Guess</h2>
+        <h2 class="header">Number Guess</h2>
         <p>You get 10 chances to guess a number</p>
         <p id="guessNumber">Guess number 1</p>
-        <p id="guessResponse">Guess a number between 1 and 1000</p>
+        <h5 id="guessResponse" class="content">Guess a number between 1 and 1000</h5>
         <form id="game">
             <input id="guess" type="number"  min="1" max="1000">
             <button id="guessBtn">Guess Number</button>
@@ -78,13 +80,13 @@
             <button id="nameBtn">Enter Name</button>
         </form>
         <button id="displayNG">Display Number Guess High Scores</button>
-        <li>
-            <ol id="score0"></ol>
-            <ol id="score1"></ol>
-            <ol id="score2"></ol>
-            <ol id="score3"></ol>
-            <ol id="score4"></ol>
-        </li>
+        <ol>
+            <li id="score0"></li>
+            <li id="score1"></li>
+            <li id="score2"></li>
+            <li id="score3"></li>
+            <li id="score4"></li>
+        </ol>
     </div>
     
     

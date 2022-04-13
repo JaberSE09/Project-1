@@ -13,15 +13,15 @@ Creating a website where if you are bored you can come to to to get a joke / fin
 
 ## Installation
 
-To install this project you would have to git clone `https://github.com/JaberSE09/Project-1.git` and run the index.html
+To install this project you would have to git clone `https://github.com/JaberSE09/Project-1.git` and run the index.html or go to the deployed site at 'https://jaberse09.github.io/Project-1/'
 
 ## Usage
 
-The bored website has a random joke generator where you can choose from a variety of catagories to get a Chuck Norris joke.
+The bored website has a random joke generator where you can choose from a variety of categories to get a Chuck Norris joke.
 
 Then there is an activity generator where you can get an activity based on a catagory.
 
-The lst section is a number guessing game where you chose a number between 1 and 1000 and you can see the amount of times you tried above it.
+The last section is a number guessing game where you chose a number between 1 and 1000 and you can see the amount of times you tried above it.
 
 ```md
     ![The website has three sections where you can go jokes / activities  / guessing game with a nav bar to get to each section](assets/images/fullpage.png)

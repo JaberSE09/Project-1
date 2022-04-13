@@ -190,6 +190,7 @@ function logScore (event) {
     var gameTemp = document.getElementById("game")
     gameTemp.style.display = "block"
     name.value = ''
+    guessResponse.innerText = "Guess a number between 1 and 1000"
 }
 // displays locally stored scores
 function displayScore () {
