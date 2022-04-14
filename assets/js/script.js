@@ -121,8 +121,13 @@ function activity (data) {
 function numberGuess (event) {
     event.preventDefault()
     guessCount = guessCount + 1
+    // user enters no value
+    if (guess.value === "") {
+        guessCount = guessCount - 1
+        guessResponse.innerText = "Please enter a number"
+    }
     // user guesses correctly
-    if (guess.value == targetNum) {
+    else if (guess.value == targetNum) {
         guessCount = guessCount - 1
         targetNum = random();
         score(guessCount)
@@ -133,7 +138,7 @@ function numberGuess (event) {
         guessCount = 1
         guessNumber.innerText = "Guess number " + guessCount
         targetNum = random();
-        guess.value = ""
+        guess.value = 0
     } 
     // user guesses too low
     else if (guess.value < targetNum) {
@@ -141,7 +146,7 @@ function numberGuess (event) {
         guessMin = guess.value
         guess.setAttribute("min", guessMin)
         guessResponse.innerText = "Too Low.  Guess a number between " + guessMin + " and " + guessMax
-        guess.value = ""
+        guess.value = 0
     } 
     // user guesses too high
     else if (guess.value > targetNum) {
@@ -149,7 +154,7 @@ function numberGuess (event) {
         guessMax = guess.value
         guess.setAttribute("max", guessMax)
         guessResponse.innerText = "Too High.  Guess a number between " + guessMin + " and " + guessMax
-        guess.value = ""
+        guess.value = 0
     }
     }
 // random number between 1 and 1000 function
@@ -167,7 +172,7 @@ function score (guess) {
     var guess = document.getElementById("guess")
     guess.setAttribute("min", 1)
     guess.setAttribute("max", 1000)
-    guess.value = ""
+    guess.value = 0
 }
 // set scores to local storage
 function logScore (event) {
