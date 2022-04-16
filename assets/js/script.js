@@ -144,6 +144,7 @@ function numberGuess (event) {
     else if (guess.value < targetNum) {
         guessNumber.innerText = "Guess number " + guessCount
         guessMin = guess.value
+        guessMin = parseInt(guessMin, 10)
         guess.setAttribute("min", guessMin)
         guessResponse.innerText = "Too Low.  Guess a number between " + guessMin + " and " + guessMax
         guess.value = 0
@@ -152,6 +153,7 @@ function numberGuess (event) {
     else if (guess.value > targetNum) {
         guessNumber.innerText = "Guess number " + guessCount
         guessMax = guess.value
+        guessMax = parseInt(guessMax, 10)
         guess.setAttribute("max", guessMax)
         guessResponse.innerText = "Too High.  Guess a number between " + guessMin + " and " + guessMax
         guess.value = 0
@@ -206,6 +208,9 @@ function displayScore () {
             var listScore = document.getElementById("score"+i)
             listScore.innerText = highScores[i].ID + ": " + highScores[i].count
         }
+    } else {
+        var listScore = document.getElementById("score0")
+        listScore.innerText = "No scores to display yet."
     }
 }
 
